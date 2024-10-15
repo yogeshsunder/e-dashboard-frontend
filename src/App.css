@@ -52,8 +52,13 @@
   text-align: center;
 }
 
-.div_signup{
+.div_signup, .product{
   margin-left: 30%;
+}
+
+.login{
+  margin-left: 30%;
+  margin-top: 100px;
 }
 
 .inputSignup{
@@ -71,6 +76,25 @@
   background-color: skyblue;
   border: 1px, solid;
   cursor: pointer;
+}
+
+.nav-right{
+  text-align: right;
+}
+
+.logo{
+    width: 45px;
+    float: left;
+    margin-top: 3px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+.invalid-input{
+  margin-left: 25px;
+    margin-top: -20px;
+    color: red;
+    display: block;
 }
 
 .App-link {

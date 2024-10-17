@@ -1,16 +1,14 @@
-.App {
- 
-}
+.App {}
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
-.nav-ul{
-    margin: 0;
-    padding: 5px;
-    background-color: skyblue;
+.nav-ul {
+  margin: 0;
+  padding: 5px;
+  background-color: skyblue;
 }
 
 .footer {
@@ -21,16 +19,16 @@
   background-color: skyblue;
 }
 
-.nav-ul li{
+.nav-ul li {
   display: inline-block;
   padding: 10px;
 }
 
-.nav-ul li a{
-  
-    color: #fff;
-    padding: 5px;
-    text-decoration: none;
+.nav-ul li a {
+
+  color: #fff;
+  padding: 5px;
+  text-decoration: none;
 
 }
 
@@ -52,21 +50,22 @@
   text-align: center;
 }
 
-.div_signup, .product{
+.div_signup,
+.product {
   margin-left: 30%;
 }
 
-.login{
+.login {
   margin-left: 30%;
   margin-top: 100px;
 }
 
-.inputSignup{
+.inputSignup {
   display: block;
-    margin: 25px;
-    padding: 7px;
-    width: 300px;
-    border: 1px solid skyblue;
+  margin: 25px;
+  padding: 7px;
+  width: 300px;
+  border: 1px solid skyblue;
 }
 
 .button_signup {
@@ -78,35 +77,35 @@
   cursor: pointer;
 }
 
-.nav-right{
+.nav-right {
   text-align: right;
 }
 
-.logo{
-    width: 45px;
-    float: left;
-    margin-top: 3px;
-    border-radius: 50%;
-    margin-left: 20px;
+.logo {
+  width: 45px;
+  float: left;
+  margin-top: 3px;
+  border-radius: 50%;
+  margin-left: 20px;
 }
 
-.invalid-input{
+.invalid-input {
   margin-left: 25px;
-    margin-top: -20px;
-    color: red;
-    display: block;
+  margin-top: -20px;
+  color: red;
+  display: block;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-.product-list{
+.product-list {
   text-align: center;
 }
 
-.product-list ul{
-  margin:0;
+.product-list ul {
+  margin: 0;
 }
 
 .product-list ul li {
@@ -116,10 +115,19 @@
   width: 150px;
 }
 
+.link-update {
+  border: solid, 1.5px, black;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-bottom: 1px;
+  background-color: lightgray;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

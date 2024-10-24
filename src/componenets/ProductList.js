@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {Link} from 'react-router-dom'
+import {json, Link} from 'react-router-dom'
 
 const ProductList=()=>{
     const [products, setProducts] = useState([]);
@@ -9,7 +9,10 @@ const ProductList=()=>{
     }, [])
 
     const getProducts=async ()=>{
-        let result = await fetch('http://localhost:5000/products');
+        let result = await fetch('http://localhost:5000/products',{
+            headerseaders:{
+            authorization: JSON.parse(localStorage.getItem('token'))
+        }});
         result = await result.json();
         setProducts(result);
     }
@@ -25,10 +28,27 @@ const ProductList=()=>{
         }
       };
 
+      const searchHandle = async (event)=>{
+        let key = event.target.value;
+        if(key){
+            let result = await fetch(`http://localhost:5000/search/${key}`)
+            result = await result.json();
+            if(result){
+                setProducts(result);
+            }
+        }
+        else{
+            getProducts();
+        }
+        
+      }
+
 
     return(
         <div className="product-list">
             <h1>Product listing showing here:</h1>
+            <input type='text' className='product-seach-box' placeholder='Search Product' 
+            onChange={searchHandle}/>
             <ul className='product-list-heading'>
                 <li>S. No.</li>
                 <li>Name</li>
@@ -37,7 +57,7 @@ const ProductList=()=>{
                 <li>Operation</li>
             </ul>
             {
-                products.map((item, index)=>
+                products.length > 0 ? products.map((item, index)=>
                 <ul key={item._id}>
                     <li>{index+1}</li>
                     <li>{item.name}</li>
@@ -47,7 +67,7 @@ const ProductList=()=>{
                     <Link to={"/update/"+item._id} className='link-update'>Update</Link></li>
                 </ul>
             )
-                
+              : <h1>No Result Found</h1>  
             }
             
         </div>
